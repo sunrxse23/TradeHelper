@@ -70,7 +70,7 @@ public class TradeHelperClient implements ClientModInitializer {
         int x = 8;
         int y = 8;
         graphics.fill(x - 4, y - 4, x + 238, y + 22 + menu.getOffers().size() * 22, 0xB0101420);
-        graphics.drawString(client.font, "TradeHelper  •  Villager trades", x, y, 0xFFE9F2FF, false);
+        graphics.text(client.font, "TradeHelper  •  Villager trades", x, y, 0xFFE9F2FF, false);
         y += 14;
 
         int shown = 0;
@@ -94,17 +94,17 @@ public class TradeHelperClient implements ClientModInitializer {
             } else {
                 line = cost + " -> " + itemLabel(result) + "  [" + offer.getUses() + "/" + offer.getMaxUses() + "]";
             }
-            graphics.drawString(client.font, line, x, y, color, false);
+            graphics.text(client.font, line, x, y, color, false);
             y += 12;
 
             if (emeraldCost >= 0 && result.getItem().toString().contains("emerald")) {
                 int profit = result.getCount() - emeraldCost;
-                graphics.drawString(client.font, "  emerald net: " + (profit >= 0 ? "+" : "") + profit,
+                graphics.text(client.font, "  emerald net: " + (profit >= 0 ? "+" : "") + profit,
                         x + 5, y, profit >= 0 ? 0xFF75E6A0 : 0xFFFF7777, false);
                 y += 11;
             }
         }
-        graphics.drawString(client.font, "H = toggle overlay  •  Restock time is an estimate",
+        graphics.text(client.font, "H = toggle overlay  •  Restock time is an estimate",
                 x, y + 3, 0xFF9AA9BC, false);
     }
 
